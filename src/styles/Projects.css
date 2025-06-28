@@ -1,0 +1,72 @@
+.projects h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.projects {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.image-container {
+    position: relative;
+    width: 800px;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 4rem;
+    
+}
+
+.project-image {
+    width: 100%;            
+    display: block;
+    opacity: .8;
+    transform: scale(1);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.button-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+.technologies img {
+    height: 50px;
+    width: 100px;
+    border: rgba(255, 255, 255, 0.123) solid 1px;
+    border-radius: 20px;
+    margin-right: 1rem;
+}
+
+.image-container:hover .button-overlay {
+  opacity: 1;
+}
+
+.image-container:hover .project-image {
+  opacity: .1;
+  transform: scale(1.05);
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 150px;
+}
+
+.github-link h2 {
+  margin-left: 10px ;
+}
+
+

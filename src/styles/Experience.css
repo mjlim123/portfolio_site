@@ -1,0 +1,48 @@
+.timeline-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+  position: relative;
+}
+.experience-header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 10 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: white;
+  top: 10px;
+  bottom: 70px;
+  margin-left: -10px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: -16px;
+  background-color: #0077ff;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  margin-top: 8px;
+}
+
+.timeline-content {
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 1rem;
+}

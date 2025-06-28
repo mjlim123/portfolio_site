@@ -1,0 +1,44 @@
+.skills-section {
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.skills-section h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 800px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(200px * 12);
+  animation: scroll 10s linear infinite;
+}
+
+.carousel-track img {
+  width: 200px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1200px);
+  }
+}

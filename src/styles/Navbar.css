@@ -1,0 +1,25 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(12, 12, 12);
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar-links a {
+  margin-left: 5rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}

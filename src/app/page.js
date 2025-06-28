@@ -1,95 +1,92 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+
+import Typewriter from "@/components/Typewriter";
+import "../styles/Hero.css";
+import "../styles/Skills.css";
+import "../styles/Projects.css";
+
+import "../styles/Experience.css";
+import Navbar from "@/components/Navbar";
+import Carousel from "@/components/Carousel";
+import HoverableImage from "@/components/HoverableImage";
+import Timeline from "@/components/Timeline";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+  const TEXT = ["full stack developer.", "problem solver.", "lifelong learner.", "weightlifting enjoyer.", "video game nerd.", "tarantula enthusiast.",]
+
+  const timelineData = [
+  {
+    title: "Fullstack Developer",
+    company: "HTD Talent",
+    date: "July 2024 - Current",
+    description: "Hire-Train-Deploy company where I learned Java and Spring Boot to create industry standard web applications. Also utilized React to create interactive frontends.",
+  },
+  {
+    title: "Crew Member",
+    company: "McDonald's",
+    date: "June 2019 - February 2020",
+    description: "Worked as part-time crew member at McDonald's after high school."
+  },
+];
+
+  return (
+    <div>
+      <Navbar />
+      <main>
+        <section className="hero-section" id="hero">
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1>Hi. I'm Marcus</h1>
+              <Typewriter text={TEXT} speed={50} pauseDuration={1000} />
+              <br></br>
+              <p>I'm a recent graduate in computer science with experience in numerous programming languages,
+                particularly in web development.
+                A proactive problem solver who thrives in collaborative environments.
+                Eager to contribute to innovative projects and open to new opportunities.
+                Let's connect and create together!</p>
+            </div>
+            <div className="socials">
+              <a href="https://www.linkedin.com/in/marcus-lim-2a21221a5/">
+                <img className="social-icons" src="/linkedin.svg"></img>
+              </a>
+              <a href="https://github.com/mjlim123">
+                <img className="social-icons" src="/github.svg"></img>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" className="skills-section">
+          <h1>Tools I've worked with</h1>
+          <Carousel />
+        </section>
+
+        <section id="experience" className="timeline-section">
+          <h1 className="experience-header">Experience</h1>
+          <Timeline data={timelineData}/>
+        </section>
+
+        <section id="projects">
+          <div className="projects">
+            <h1>My Projects</h1>
+            <HoverableImage 
+              image="/watchparty.png" 
+              title="Watchparty" 
+              link="https://github.com/mjlim123/watchparty"
+              description="I created a web application that allows users to watch YouTube videos with other people in a private room."
+              technologies={["/java.svg", "/spring.svg", "/mysql.svg", "/react.svg", "aws.svg"]}/>
+            <HoverableImage 
+              image="/aigenda.png" 
+              title="Aigenda" 
+              link="https://github.com/mjlim123/aigenda"
+              description="I collaborated with two other developers to create a calendar web application that utilizes the OpenAI api to assist the user perform calendar operations such as scheduling events, meetings, holidays, etc."
+              technologies={["/java.svg", "/spring.svg", "/mysql.svg", "/react.svg"]}/>
+              
+          </div>
+        </section>
+
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
